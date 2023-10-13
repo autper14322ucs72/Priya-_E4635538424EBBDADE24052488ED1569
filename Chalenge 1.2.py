@@ -1,21 +1,13 @@
-Python program to check if year is a leap year or not
+def isLeapYear(year):
+  if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+    return True
+  else:
+    return False
 
-year = 2000
+year = int(input("Enter a year : "))
 
-# To get year (integer input) from the user
-# year = int(input("Enter a year: "))
-
-# divided by 100 means century year (ending with 00)
-# century year divided by 400 is leap year
-if (year % 400 == 0) and (year % 100 == 0):
-  print("{0} is a leap year".format(year))
-
-# not divided by 100 means not a century year
-# year divided by 4 is a leap year
-elif (year % 4 ==0) and (year % 100 != 0):
-    print("{0} is a leap year".format(year))
-
-# if not divided by both 400 (century year) and 4 (not century year)
-# year is not leap year
+if isLeapYear(year):
+  print('{} is a leap year'.format(year))
+  
 else:
-    print("{0} is not a leap year".format(year))
+  print('{} is a not leap year'.format(year))
